@@ -1,0 +1,105 @@
+/* Hero image styles */
+.hero {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://www.google.com/imgres?q=california%20highway&imgurl=https%3A%2F%2Fca-times.brightspotcdn.com%2Fdims4%2Fdefault%2F5d1eee3%2F2147483647%2Fstrip%2Ffalse%2Fcrop%2F5063x3375%2B0%2B0%2Fresize%2F1486x991!%2Fquality%2F75%2F%3Furl%3Dhttps%253A%252F%252Fcalifornia-times-brightspot.s3.amazonaws.com%252F91%252Fb8%252Fcfda3f4742a98dcc8c0844119cba%252Fap24092624425133.jpg&imgrefurl=https%3A%2F%2Fwww.latimes.com%2Fcalifornia%2Fnewsletter%2F2024-04-02%2Fhighway-1-climate-change-resilience-essential-california&docid=gmGzqerlox55MM&tbnid=Mtwlu7P2KdqMSM&vet=12ahUKEwjC09zvvsKMAxXdIjQIHfKYL4oQM3oECBkQAA..i&w=1486&h=991&hcb=2&ved=2ahUKEwjC09zvvsKMAxXdIjQIHfKYL4oQM3oECBkQAA');
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+/* Destination images */
+.destination-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+}
+
+.day-card-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+/* Map container */
+#trip-map {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+/* Image gallery */
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.gallery-item {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.gallery-caption {
+  padding: 15px;
+  background-color: white;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Responsive adjustments for images */
+@media (max-width: 768px) {
+  .hero {
+    height: 40vh;
+  }
+  
+  .destination-image {
+    height: 200px;
+  }
+  
+  .day-card-image {
+    height: 120px;
+  }
+  
+  .gallery-image {
+    height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 30vh;
+  }
+  
+  .destination-image {
+    height: 150px;
+  }
+  
+  .day-card-image {
+    height: 100px;
+  }
+  
+  .image-gallery {
+    grid-template-columns: 1fr;
+  }
+}

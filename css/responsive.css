@@ -1,0 +1,531 @@
+/* Mobile Navigation Styles */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 12px;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  margin: 6px 0;
+  background-color: white;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 992px) {
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+  
+  .hero p {
+    font-size: 1.3rem;
+  }
+  
+  .overview-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .day-cards, 
+  .weather-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  /* Mobile Nav */
+  .nav-toggle {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+  }
+  
+  nav {
+    padding: 15px 0;
+  }
+  
+  nav .container {
+    position: relative;
+  }
+  
+  nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    background-color: var(--primary-color);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 99;
+  }
+  
+  nav ul.active {
+    display: flex;
+  }
+  
+  nav ul li {
+    margin: 12px 0;
+    padding: 0;
+  }
+  
+  nav ul li a {
+    display: block;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+  }
+  
+  nav ul li a::after {
+    content: none;
+  }
+  
+  .nav-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(7px, 7px);
+  }
+  
+  .nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .nav-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+  }
+  
+  /* Hero Section */
+  .hero {
+    height: 60vh;
+  }
+  
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  
+  .hero p {
+    font-size: 1.1rem;
+  }
+  
+  .hero-buttons .btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+  
+  /* Main Content */
+  main {
+    padding: 40px 0;
+  }
+  
+  section {
+    margin-bottom: 50px;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+  
+  h3 {
+    font-size: 1.6rem;
+  }
+  
+  /* Section layouts */
+  .day-cards, 
+  .weather-cards,
+  .image-gallery {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .overview-highlights, 
+  .overview-details {
+    padding: 20px;
+  }
+  
+  .progress-tracker {
+    padding: 20px;
+  }
+  
+  .step-marker {
+    width: 30px;
+    height: 30px;
+    font-size: 0.9rem;
+  }
+  
+  .step-label {
+    font-size: 0.8rem;
+  }
+  
+  /* Cost table */
+  .cost-estimate {
+    padding: 20px;
+  }
+  
+  .cost-summary {
+    padding: 20px;
+  }
+  
+  .cost-total {
+    font-size: 2rem;
+  }
+  
+  .cost-per-person {
+    font-size: 1rem;
+  }
+  
+  .cost-table, 
+  .driving-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    font-size: 0.9rem;
+  }
+  
+  .cost-table th, 
+  .cost-table td,
+  .driving-table th, 
+  .driving-table td {
+    padding: 10px;
+  }
+  
+  /* Touch optimizations */
+  button, 
+  .btn,
+  .nav-toggle, 
+  nav ul li a,
+  .filter-btn,
+  .map-btn {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 10px 15px;
+  }
+  
+  .gallery-item,
+  .day-card {
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    height: 50vh;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+  }
+  
+  .trip-overview,
+  .cost-estimate {
+    padding: 20px 15px;
+  }
+  
+  .day-card-header, 
+  .day-card-body {
+    padding: 15px;
+  }
+  
+  .map-container {
+    height: 300px;
+  }
+  
+  .weather-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  .weather-card {
+    padding: 15px 10px;
+  }
+  
+  .weather-location {
+    font-size: 1rem;
+  }
+  
+  .weather-icon {
+    font-size: 2.5rem;
+  }
+  
+  .weather-temp {
+    font-size: 0.9rem;
+  }
+  
+  .weather-desc {
+    font-size: 0.8rem;
+  }
+  
+  .filters {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    justify-content: flex-start;
+    margin-left: -10px;
+    margin-right: -10px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  .filter-btn {
+    flex: 0 0 auto;
+    font-size: 0.85rem;
+    padding: 6px 12px;
+    margin: 0 4px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  nav, 
+  footer, 
+  .map-container,
+  .print-button,
+  .filters,
+  .map-controls,
+  #gallery,
+  #weather {
+    display: none;
+  }
+  
+  header {
+    height: auto;
+    background: none !important;
+    color: black;
+    padding: 20px 0;
+  }
+  
+  .hero {
+    height: auto;
+    background: none !important;
+    color: black;
+    position: static;
+  }
+  
+  .hero h1 {
+    font-size: 24pt;
+    text-shadow: none;
+    color: black;
+  }
+  
+  .hero p {
+    font-size: 14pt;
+    text-shadow: none;
+    color: black;
+  }
+  
+  .hero-buttons {
+    display: none;
+  }
+  
+  body {
+    font-size: 11pt;
+    line-height: 1.5;
+    color: black;
+    background: white;
+  }
+  
+  h2 {
+    font-size: 18pt;
+    margin-top: 20px;
+    border-bottom-color: black;
+    color: black;
+  }
+  
+  h2::after {
+    display: none;
+  }
+  
+  h3 {
+    font-size: 14pt;
+    color: black;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .day-cards,
+  .weather-cards,
+  .image-gallery {
+    display: block;
+  }
+  
+  .day-card,
+  .weather-card,
+  .gallery-item {
+    break-inside: avoid;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 0;
+    box-shadow: none;
+    page-break-inside: avoid;
+  }
+  
+  .day-card-header {
+    background-color: #f0f0f0 !important;
+    color: black !important;
+  }
+  
+  .day-card:hover,
+  .gallery-item:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  a::after {
+    content: " (" attr(href) ")";
+    font-size: 80%;
+  }
+  
+  .cost-table th,
+  .driving-table th {
+    background-color: #f2f2f2 !important;
+    color: black !important;
+  }
+  
+  .progress-tracker,
+  [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+  
+  .cost-summary {
+    background-color: #f0f0f0 !important;
+    color: black !important;
+    border: 1px solid #ddd;
+  }
+}
+
+/* Accessibility Enhancements */
+:focus {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --primary-color: #000;
+    --secondary-color: #333;
+    --accent-color: #f00;
+    --light-color: #fff;
+    --dark-color: #000;
+  }
+  
+  body {
+    color: black;
+    background-color: white;
+  }
+  
+  a {
+    color: blue;
+    text-decoration: underline;
+  }
+  
+  .day-card-header,
+  .recommendation-card-header {
+    background-color: black;
+    color: white;
+  }
+  
+  .hero {
+    background-image: none !important;
+    background-color: black;
+  }
+  
+  .gallery-item::after {
+    display: none;
+  }
+  
+  .gallery-image {
+    border: 1px solid black;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-color: #3a8c5f;
+    --secondary-color: #5baa7f;
+    --accent-color: #ffd166;
+    --light-color: #2a2a2a;
+    --dark-color: #f8f9fa;
+  }
+  
+  body {
+    background-color: #1a1a1a;
+    color: var(--dark-color);
+  }
+  
+  .trip-overview,
+  .cost-estimate,
+  .day-card,
+  .weather-card,
+  .gallery-caption {
+    background-color: #2a2a2a;
+    color: var(--dark-color);
+  }
+  
+  .overview-highlights, 
+  .overview-details {
+    background-color: #222;
+  }
+  
+  .cost-table tr:nth-child(even),
+  .driving-table tr:nth-child(even) {
+    background-color: #333;
+  }
+  
+  .cost-table tr:hover,
+  .driving-table tr:hover {
+    background-color: #444;
+  }
+  
+  .map-btn,
+  .filter-btn {
+    background-color: #2a2a2a;
+    color: var(--secondary-color);
+    border-color: var(--secondary-color);
+  }
+  
+  .map-btn:hover, 
+  .map-btn.active,
+  .filter-btn:hover, 
+  .filter-btn.active {
+    background-color: var(--secondary-color);
+    color: #1a1a1a;
+  }
+} 
